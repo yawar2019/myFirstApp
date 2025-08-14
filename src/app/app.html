@@ -23,7 +23,7 @@
 
 <p [style]="firstStyle">Hi Style</p>
 
-<p [style.color]="secondStyle">hello</p>
+<p  [style.background-color]="secondStyle" [style.font-size]="fontsizeStyle">hello</p>
 
 
 <span>Two way binding</span>
@@ -32,6 +32,11 @@
 <input type="text"  [(ngModel)]="UserName" />{{UserName}}
 
 
+
+
+
+
+<p style="color:red;background-color: gray;;">test</p>
 
 <app-contact></app-contact>
 
@@ -102,6 +107,46 @@
     </tr>
   }
 </tbody>
+
+
+
+<span>Directive</span>
+
+<p *ngIf="isCarAvailable then ifblock;else elseblock">111</p>
+
+<ng-template #ifblock>
+<h1>Audi is available</h1>
+</ng-template>
+<ng-template #elseblock>
+<h1>Nano is available</h1>
+</ng-template>
+
+
+<div [ngSwitch]="SwitchVar">
+  <div *ngSwitchCase="'I'">Iron Man Movie</div>
+  <div *ngSwitchCase="'T'">Thor Movie</div>
+  <div *ngSwitchCase="'S'">Spider Man Movie</div>
+  <div *ngSwitchDefault>ShaktiMan Movie</div>
+</div>
+
+
+
+<div *ngFor="let car of cars">
+<ul>
+  <li>{{car}}</li>
+</ul>
+</div>
+
+<br>
+
+<div *ngFor="let sport of sports;">
+<ul>
+  <li>{{sport.id}}</li>
+  <li>{{sport.name}}</li>
+   
+</ul>
+</div>
+
 
 </table>
 

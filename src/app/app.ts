@@ -2,7 +2,7 @@ import { Component, signal } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { Contact } from './contact/contact';
 import { FormsModule } from '@angular/forms';
-
+import {CommonModule} from  '@angular/common';
 
 interface IContact
 {
@@ -13,7 +13,7 @@ interface IContact
 
 @Component({
   selector: '[app-root]',
-  imports: [RouterOutlet,Contact,FormsModule],
+  imports: [RouterOutlet,Contact,FormsModule,CommonModule],
   templateUrl:'./app.html',
   styleUrl: './app.css'
 })
@@ -39,6 +39,7 @@ hastrue=true;
 firstStyle={"color":"blue","background-color":"red"};
 
 secondStyle=this.hastrue?"red":"green";
+fontsizeStyle="20px";
 
   getResult(a:any)
   {
@@ -50,7 +51,7 @@ getEventValue(event:any)
     console.log(event);
   }
 
-  UserName="test";
+  UserName="Jivan";
 
   cars=['BMW','NANO','AUDI'];
   sports=[
@@ -78,4 +79,7 @@ getEventValue(event:any)
         },
         
         ]
+
+        isCarAvailable=true;
+        SwitchVar="K";
 }
