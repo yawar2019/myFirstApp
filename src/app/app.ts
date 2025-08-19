@@ -3,6 +3,7 @@ import { RouterOutlet } from '@angular/router';
 import { Contact } from './contact/contact';
 import { FormsModule } from '@angular/forms';
 import {CommonModule} from  '@angular/common';
+import { About } from './about/about';
 
 interface IContact
 {
@@ -13,7 +14,7 @@ interface IContact
 
 @Component({
   selector: '[app-root]',
-  imports: [RouterOutlet,Contact,FormsModule,CommonModule],
+  imports: [RouterOutlet,Contact,FormsModule,CommonModule,About],
   templateUrl:'./app.html',
   styleUrl: './app.css'
 })
@@ -82,4 +83,11 @@ getEventValue(event:any)
 
         isCarAvailable=true;
         SwitchVar="K";
+
+fun(value:any)
+{
+  alert(value);
+}
+
+
 }

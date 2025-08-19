@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 
 @Component({
   selector: 'app-about',
@@ -8,4 +8,12 @@ import { Component } from '@angular/core';
 })
 export class About {
 FirstName="Raj shekhar";
+@Input() parentdata:string='';
+@Output() childata=new EventEmitter<string>();
+
+ChildToParent()
+{
+  this.childata.emit('Good Morning');
+}
+
 }
