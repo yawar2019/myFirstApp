@@ -4,6 +4,7 @@ import { Contact } from './contact/contact';
 import { FormsModule } from '@angular/forms';
 import {CommonModule} from  '@angular/common';
 import { About } from './about/about';
+import { AppService } from './app-service';
 
 interface IContact
 {
@@ -25,7 +26,13 @@ export class App {
   hero="shaktiman";
   srcUrl="https://www.searchenginejournal.com/wp-content/uploads/2019/04/the-seo-guide-to-angular.png";
 
-firstsize="firstsizecss";
+
+constructor(private appser:AppService)
+{
+
+}
+
+  firstsize="firstsizecss";
 firstbackcolorcss="firstbackcolorcss";
 
 firstCssArr=["first","firstsizecss","firstbackcolorcss"];
@@ -88,6 +95,18 @@ fun(value:any)
 {
   alert(value);
 }
+
+login()
+{
+  this.appser.setAuthdetails("true");
+}
+
+
+logout()
+{
+  this.appser.setAuthdetails("false");
+}
+
 
 
 }

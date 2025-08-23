@@ -1,2 +1,11 @@
 <p>contact works!</p>
 <button (click)="GotoAbout()">Navigate to About Page</button>
+
+
+
+<a [routerLink]="['/contact',2,'Mouli']">Mouli</a><br>
+<a [routerLink]="['/contact',2,'vijay']">vijay</a><br>
+<a [routerLink]="['/contact',2,'kiran']">kiran</a><br>
+
+
+<router-outlet></router-outlet>
