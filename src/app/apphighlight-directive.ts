@@ -11,9 +11,9 @@ export class ApphighlightDirective  implements OnInit {
 this.render.setStyle(this.element.nativeElement,"color","red");
   }
 
-  @HostListener('mouseenter') onclick(event:Event){
-this.render.setStyle(this.element.nativeElement,"color","Pink");
+//   @HostListener('mouseenter') onclick(event:Event){
+// this.render.setStyle(this.element.nativeElement,"color","Pink");
 
   }
 
-}
+
