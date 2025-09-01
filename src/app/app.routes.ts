@@ -5,6 +5,10 @@ import { Contact } from './contact/contact';
 import { Appguard } from './appguard';
 import { AppDeactivateGuardService } from './app-deactivate-guard-service';
 import { Simpletemplateform } from './simpletemplateform/simpletemplateform';
+import { ReactiveFormEx } from './reactive-form-ex/reactive-form-ex';
+import { Dynamicform } from './dynamicform/dynamicform';
+import { Formbuilderexample } from './formbuilderexample/formbuilderexample';
+import { Pipeexanple } from './pipeexanple/pipeexanple';
 
 export const routes: Routes = [
 
@@ -15,5 +19,9 @@ export const routes: Routes = [
         //canActivate:[Appguard],
     children:[{path:':id/:name',component:About,canDeactivate:[AppDeactivateGuardService]}]
     },
-    {path:"simpletemplateform" ,component:Simpletemplateform}
+    {path:"simpletemplateform" ,component:Simpletemplateform},
+    {path:"reactiveform" ,component:ReactiveFormEx},
+     {path:"dynamicform" ,component:Dynamicform},//app-formbuilderexample
+     {path:"formbuilder" ,component:Formbuilderexample},
+     {path:'pipeexample',component:Pipeexanple}
 ];

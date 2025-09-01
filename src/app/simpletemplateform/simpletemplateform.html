@@ -3,7 +3,8 @@
     <div class="container">
   <div class="col-md-6">
     <label for="inputEmail4" class="form-label">firstname</label>
-    <input type="text" #fname="ngModel"  class="form-control" name="firstname" [(ngModel)]="studentObj.firstname" required minlength="3">
+    <input type="text" #fname="ngModel"  class="form-control"
+     name="firstname" [(ngModel)]="studentObj.firstname" required minlength="3">
     <div class="text-danger">
         @if(fname.errors?.['required'] && fname.touched){
             required
