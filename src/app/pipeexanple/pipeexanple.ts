@@ -1,5 +1,6 @@
-import { CurrencyPipe, DatePipe, JsonPipe, LowerCasePipe, TitleCasePipe, UpperCasePipe } from '@angular/common';
+import { CurrencyPipe, DatePipe, JsonPipe, LowerCasePipe, PercentPipe, SlicePipe, TitleCasePipe, UpperCasePipe } from '@angular/common';
 import { Component } from '@angular/core';
+import { ChangeCasePipePipe } from '../change-case-pipe-pipe';
 
 @Component({
   selector: 'app-pipeexanple',
@@ -9,7 +10,11 @@ import { Component } from '@angular/core';
     TitleCasePipe,
     JsonPipe,
     CurrencyPipe,
-  DatePipe],
+  DatePipe,
+SlicePipe,
+PercentPipe,
+ChangeCasePipePipe
+],
   templateUrl: './pipeexanple.html',
   styleUrl: './pipeexanple.css'
 })
@@ -25,7 +30,7 @@ empObj={
   mobileNo:'9929292'
 }
 
-price:number=759.00;
+price:number=1.72;
 currentDate:Date=new Date();
-
+fruits:string[]=['Apple','Orange','banana','mango'];
 }

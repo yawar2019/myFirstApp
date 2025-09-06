@@ -1,0 +1,34 @@
+<p>employee-details works!</p>
+
+
+<table>
+    <tr>
+        <th>EmpId</th>
+        <th>EmpName</th>
+        <th>EmpSalary</th>
+        <th>Actions</th>
+    </tr>
+    <tr *ngFor="let emp of service.AllEmployees">
+        <td>{{emp.EmpId}}</td>
+        <td>{{emp.EmpName}}</td>
+        <td>{{emp.EmpSalary}}</td>
+        <td>
+            <a (click)="EmployeeEdit(emp.EmpId)">Edit|</a>
+            <a (click)="EmployeeDelete(emp.EmpId)">Delete</a>
+        </td>
+    </tr>
+</table>
+
+
+<br>
+
+<form #empform="ngForm">
+    <input type="hidden" name="EmpId" [(ngModel)]="service.Employee.EmpId" [value]="service.Employee.EmpId"><br>
+
+    <label>EmpName</label>
+    <input type="text" name="EmpName" [(ngModel)]="service.Employee.EmpName" [value]="service.Employee.EmpName"><br>
+    <label>EmpSalary</label>
+    <input type="text" name="EmpSalary" [(ngModel)]="service.Employee.EmpSalary" [value]="service.Employee.EmpSalary"><br>
+    <input type="button" (click)="EmployeeAdd(empform.value)" value="Save">
+
+</form>

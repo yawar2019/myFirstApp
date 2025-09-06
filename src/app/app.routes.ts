@@ -9,6 +9,7 @@ import { ReactiveFormEx } from './reactive-form-ex/reactive-form-ex';
 import { Dynamicform } from './dynamicform/dynamicform';
 import { Formbuilderexample } from './formbuilderexample/formbuilderexample';
 import { Pipeexanple } from './pipeexanple/pipeexanple';
+import { Employeedetails } from './employeedetails/employeedetails';
 
 export const routes: Routes = [
 
@@ -23,5 +24,6 @@ export const routes: Routes = [
     {path:"reactiveform" ,component:ReactiveFormEx},
      {path:"dynamicform" ,component:Dynamicform},//app-formbuilderexample
      {path:"formbuilder" ,component:Formbuilderexample},
-     {path:'pipeexample',component:Pipeexanple}
+     {path:'pipeexample',component:Pipeexanple},
+      {path:'crud',component:Employeedetails}
 ];
