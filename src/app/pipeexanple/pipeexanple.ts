@@ -1,6 +1,7 @@
 import { CurrencyPipe, DatePipe, JsonPipe, LowerCasePipe, PercentPipe, SlicePipe, TitleCasePipe, UpperCasePipe } from '@angular/common';
 import { Component } from '@angular/core';
 import { ChangeCasePipePipe } from '../change-case-pipe-pipe';
+import { SimpleNgContentExample } from '../simple-ng-content-example/simple-ng-content-example';
 
 @Component({
   selector: 'app-pipeexanple',
@@ -13,7 +14,8 @@ import { ChangeCasePipePipe } from '../change-case-pipe-pipe';
   DatePipe,
 SlicePipe,
 PercentPipe,
-ChangeCasePipePipe
+ChangeCasePipePipe,
+SimpleNgContentExample
 ],
   templateUrl: './pipeexanple.html',
   styleUrl: './pipeexanple.css'

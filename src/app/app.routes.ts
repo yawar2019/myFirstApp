@@ -10,6 +10,7 @@ import { Dynamicform } from './dynamicform/dynamicform';
 import { Formbuilderexample } from './formbuilderexample/formbuilderexample';
 import { Pipeexanple } from './pipeexanple/pipeexanple';
 import { Employeedetails } from './employeedetails/employeedetails';
+import { HooksExample } from './hooks-example/hooks-example';
 
 export const routes: Routes = [
 
@@ -25,5 +26,6 @@ export const routes: Routes = [
      {path:"dynamicform" ,component:Dynamicform},//app-formbuilderexample
      {path:"formbuilder" ,component:Formbuilderexample},
      {path:'pipeexample',component:Pipeexanple},
-      {path:'crud',component:Employeedetails}
+      {path:'crud',component:Employeedetails},
+       {path:'hooks',component:HooksExample}
 ];

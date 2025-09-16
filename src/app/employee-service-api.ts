@@ -20,10 +20,10 @@ AllEmployees:IEmployee[]=[];
 constructor(private http:HttpClient)
  { 
 
-
 }
   ngOnInit(): void {
-    throw new Error('Method not implemented.');
+      this.getEmployees();
+
   }
 
 getEmployees():Observable<any>
@@ -42,6 +42,7 @@ if(Employee.EmpId>0)
 }
 else{
   return this.http.post(this.url+'api/EmpApi',Employee);
+  
 }
 }
 
