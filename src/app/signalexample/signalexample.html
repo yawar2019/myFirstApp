@@ -1,0 +1,20 @@
+<p>signalexample works!</p>
+<p>{{count()}}</p> 
+total:{{c()}}<br>
+
+<!-- as a function you need to read your signalvariable -->
+
+<button (click)="Increment()">Increment</button>
+<button (click)="Decrement()">Decrement</button>
+
+<br>
+
+
+<ul>
+    <li *ngFor="let item of todos()">{{item}}</li>
+</ul>
+<button (click)="addingtodo('i have first signal')">add todo</button>
+<button (click)="clear()">clear</button>
+
+<br>
+<app-signal-get-counter></app-signal-get-counter>

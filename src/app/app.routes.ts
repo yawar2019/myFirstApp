@@ -11,6 +11,8 @@ import { Formbuilderexample } from './formbuilderexample/formbuilderexample';
 import { Pipeexanple } from './pipeexanple/pipeexanple';
 import { Employeedetails } from './employeedetails/employeedetails';
 import { HooksExample } from './hooks-example/hooks-example';
+import { Signalexample } from './signalexample/signalexample';
+import { SignalGetCounterEx2 } from './signal-get-counter-ex2/signal-get-counter-ex2';
 
 export const routes: Routes = [
 
@@ -27,5 +29,7 @@ export const routes: Routes = [
      {path:"formbuilder" ,component:Formbuilderexample},
      {path:'pipeexample',component:Pipeexanple},
       {path:'crud',component:Employeedetails},
-       {path:'hooks',component:HooksExample}
+       {path:'hooks',component:HooksExample},
+         {path:'signalexample',component:Signalexample},
+         {path:'signalexample2',component:SignalGetCounterEx2}
 ];

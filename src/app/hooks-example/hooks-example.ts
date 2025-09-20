@@ -9,14 +9,14 @@ import { HooksChild } from '../hooks-child/hooks-child';
 })
 export class HooksExample implements
 
-OnInit
-// DoCheck,
-// AfterContentInit,
-// AfterContentChecked,
-// AfterViewInit,
-// AfterViewChecked,
-// OnDestroy,
-// OnChanges
+OnInit,
+DoCheck,
+AfterContentInit,
+AfterContentChecked,
+AfterViewInit,
+AfterViewChecked,
+OnDestroy
+//OnChanges
 
 {
 
@@ -27,33 +27,39 @@ constructor()
    this.age=18;
   console.log('Constructor Called:'+this.age);
 }
+ 
 ngOnInit(): void {
   this.age=18;
     console.log('Parent ngOnInit Called:');
    }
-  // ngOnChanges(changes: SimpleChanges): void {
-  //   console.log('ngOnChanges Called:'+this.age);
-  // }
-  ngOnDestroy(): void {
-    console.log('ngOnDestroy Called:'+this.age);
-  }
-
-
-  // ngAfterViewInit(): void {
-  //   console.log('ngAfterViewInit Called:'+this.age);
-  // }
-  // ngAfterViewChecked(): void {
-  //   console.log('ngAfterViewChecked Called:'+this.age);
-  // }
-  
-  // ngAfterContentChecked(): void {
-  //   console.log('ngAfterContentChecked Called:'+this.age);
-  // }
+    
   ngDoCheck(): void {
     console.log('ngDoCheck Called:'+this.age);
   }
   
+  // ngOnChanges(changes: SimpleChanges): void {
+  //   console.log('ngOnChanges Called:'+this.age);
+  // }
+  
 
+ ngAfterContentInit(): void {
+        console.log('ngAfterContentInit Called:'+this.age);
+
+  }
+  ngAfterContentChecked(): void {
+    console.log('ngAfterContentChecked Called:'+this.age);
+  }
+  ngAfterViewInit(): void {
+    console.log('ngAfterViewInit Called:'+this.age);
+  }
+  ngAfterViewChecked(): void {
+    console.log('ngAfterViewChecked Called:'+this.age);
+  }
+  
+ 
+ngOnDestroy(): void {
+    console.log('ngOnDestroy Called:'+this.age);
+  }
 
   updateAge()
   {
@@ -89,5 +95,15 @@ ngOnInit(): void {
 
 // called whenever any change it detect inside component like variable,property ,arrays
 // object 
+
+//ngAfterContentInit is called whenever you are going load data or content
+//it is also called when we are going to pass data to ng-content directive
+//this is used to called at the time of initialization of content
+
+
+///ngAfterContnetChecked called after data or content is called ie to checked data
+
+//ngAfterViewInit is Called to initialize domelements
+//ngAfterViewChecked called when fully view is loaded
 
 
