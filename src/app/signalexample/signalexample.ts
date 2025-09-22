@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component, computed, signal } from '@angular/core';
+import { Component, computed, effect, signal } from '@angular/core';
 import { SignalGetCounter } from '../signal-get-counter/signal-get-counter';
 
 @Component({
@@ -9,7 +9,17 @@ import { SignalGetCounter } from '../signal-get-counter/signal-get-counter';
   styleUrl: './signalexample.css'
 })
 export class Signalexample {
-count=signal(10);//initialize a value 
+
+  count=signal(10);//initialize a value 
+  constructor()
+  {
+    effect(()=>{
+
+    console.log('Hello World!'+this.count());
+
+    })
+  }
+
 todos=signal<string[]>([]);
 
 a=signal(10);

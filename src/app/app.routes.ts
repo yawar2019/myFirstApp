@@ -13,6 +13,7 @@ import { Employeedetails } from './employeedetails/employeedetails';
 import { HooksExample } from './hooks-example/hooks-example';
 import { Signalexample } from './signalexample/signalexample';
 import { SignalGetCounterEx2 } from './signal-get-counter-ex2/signal-get-counter-ex2';
+import { RxjxExample } from './rxjx-example/rxjx-example';
 
 export const routes: Routes = [
 
@@ -31,5 +32,6 @@ export const routes: Routes = [
       {path:'crud',component:Employeedetails},
        {path:'hooks',component:HooksExample},
          {path:'signalexample',component:Signalexample},
-         {path:'signalexample2',component:SignalGetCounterEx2}
+         {path:'signalexample2',component:SignalGetCounterEx2},
+         {path:'rxjx',component:RxjxExample}
 ];
