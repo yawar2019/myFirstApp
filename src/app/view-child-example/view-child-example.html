@@ -2,7 +2,14 @@
 
 
 <input type="text" #rrr />
-<input type="text" #rrr />
-<input type="text" #rrr />
 
-<button (click)="ShowAlert()">click me </button>
+<!-- 
+<button (click)="ShowAlert()">click me </button> -->
+
+
+<button #button>button1</button>
+<button #button>button2</button>
+<button #button>button3</button><br>
+
+<button (click)="show()">displaying another component variable and methods </button>
+<app-view-childexample2></app-view-childexample2>
