@@ -1,6 +1,7 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { ActivatedRoute, Params } from '@angular/router';
 import { AppDeactivateGuardService, IDeactivate } from '../app-deactivate-guard-service';
+import { throwError } from 'rxjs';
 @Component({
   selector: 'app-about',
   imports: [],
@@ -24,6 +25,24 @@ user={
 
 constructor(private router:ActivatedRoute)
 {
+//this.sampleErrorHandlineh();
+}
+
+sampleErrorHandlineh()
+{
+
+
+// try {
+//   let b=0,a=10;
+
+//   if (b === 0) {
+//     throw new Error('Cannot divide by zero');
+//   }
+//   let result = a / b;
+//   console.log('Result:', result);
+// } catch (error) {
+//   console.log('Error occurred:', error);
+// }
 
 }
   canExit(): boolean{
@@ -40,6 +59,8 @@ constructor(private router:ActivatedRoute)
   //   id:this.router.snapshot.params['id'],
   //   name:this.router.snapshot.params['name']
   // }
+
+  
 this.router.params.subscribe((data:Params)=>{
   this.user={
     id:data['id'],

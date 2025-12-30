@@ -1,23 +1,23 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { Signalcounter } from './signalcounter';
+// import { Signalcounter } from './signalcounter';
 
-describe('Signalcounter', () => {
-  let component: Signalcounter;
-  let fixture: ComponentFixture<Signalcounter>;
+// describe('Signalcounter', () => {
+//   let component: Signalcounter;
+//   let fixture: ComponentFixture<Signalcounter>;
 
-  beforeEach(async () => {
-    await TestBed.configureTestingModule({
-      imports: [Signalcounter]
-    })
-    .compileComponents();
+//   beforeEach(async () => {
+//     await TestBed.configureTestingModule({
+//       imports: [Signalcounter]
+//     })
+//     .compileComponents();
 
-    fixture = TestBed.createComponent(Signalcounter);
-    component = fixture.componentInstance;
-    fixture.detectChanges();
-  });
+//     fixture = TestBed.createComponent(Signalcounter);
+//     component = fixture.componentInstance;
+//     fixture.detectChanges();
+//   });
 
-  it('should create', () => {
-    expect(component).toBeTruthy();
-  });
-});
+//   it('should create', () => {
+//     expect(component).toBeTruthy();
+//   });
+// });

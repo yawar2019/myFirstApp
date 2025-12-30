@@ -14,6 +14,7 @@ import { HooksExample } from './hooks-example/hooks-example';
 import { Signalexample } from './signalexample/signalexample';
 import { SignalGetCounterEx2 } from './signal-get-counter-ex2/signal-get-counter-ex2';
 import { RxjxExample } from './rxjx-example/rxjx-example';
+import { SessionAndLocalStorageExample } from './session-and-local-storage-example/session-and-local-storage-example';
 
 export const routes: Routes = [
 
@@ -33,5 +34,8 @@ export const routes: Routes = [
        {path:'hooks',component:HooksExample},
          {path:'signalexample',component:Signalexample},
          {path:'signalexample2',component:SignalGetCounterEx2},
-         {path:'rxjx',component:RxjxExample}
-];
+         {path:'rxjx',component:RxjxExample}, 
+         {path:'sessionStorage',component:SessionAndLocalStorageExample},
+         {path:'profile',loadComponent:()=>import('./userprofile/userprofile').then(m=>m.Userprofile)}
+
+    ];

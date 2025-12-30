@@ -4,6 +4,7 @@ import { App } from './app/app';
 import { About } from './app/about/about';
 import { Contact } from './app/contact/contact';
 import { Layout } from './app/layout/layout';
+import { RxjxExample } from './app/rxjx-example/rxjx-example';
 
-bootstrapApplication(Layout, appConfig)
+bootstrapApplication(RxjxExample, appConfig)
   .catch((err) => console.error(err));
