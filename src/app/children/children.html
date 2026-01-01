@@ -1,0 +1,43 @@
+<p>children works!</p>
+
+
+<div>
+    <h1>first div</h1>
+        <ng-content select="h2"></ng-content>
+</div>
+<div>
+    <h1>second div</h1>
+        <ng-content select="h3"></ng-content>
+</div>
+<div>
+    <h1>third div</h1>
+        <ng-content select="button"></ng-content>   
+</div>
+
+<!-- class selectors in ng-content are used to project specific elements from the parent component into designated areas within the child component's template. In this case, the <h2>, <h3>, and <button> elements from the parent component will be projected into their respective divs in the child component. -->
+
+
+<div>
+    <h1>class Selector</h1>
+        <ng-content select=".c1"></ng-content>
+</div>    
+
+
+
+//--ng Container Example--
+<ng-container *ngIf="showContent">
+    <p>Content is displayed</p>
+</ng-container>
+///--ng Container end Example--
+
+
+<!-- ng-template Example -->
+<div *ngIf="showContent then ifBlock else elseBlock">
+    <p>Content is shown</p>
+</div>
+<ng-template #ifBlock>
+    <p>Content is shown</p>
+</ng-template>
+<ng-template #elseBlock>
+    <p>Content is hidden</p>
+</ng-template>
