@@ -1,0 +1,167 @@
+What is ng-content?
+
+ng-content is an  angular placholder element used for content peojection
+
+it is a technique that allows you to insert dynamic html from Parent to Child Component
+
+
+this make child Component is more reusable component and flexible  
+
+
+step1 Parent component
+<p>parent works!</p>
+
+
+<app-children>
+    <h2>welcome to Angular Party to first div</h2>
+    <h3>Lets Engjoy Second div</h3>
+    <button>Click Me</button>
+</app-children>
+
+
+step2: children Components
+<p>children works!</p>
+
+
+<div>
+    <h1>first div</h1>
+        <ng-content select="h2"></ng-content>
+</div>
+<div>
+    <h1>second div</h1>
+        <ng-content select="h3"></ng-content>
+</div>
+<div>
+    <h1>third div</h1>
+        <ng-content select="button"></ng-content>   
+</div>
+
+
+here we insert data based on html selector
+
+select="h3"  Element Selector
+
+
+Another Selector is Class Selector
+
+Example
+
+ Children Coponent
+
+<p>children works!</p>
+
+
+<div>
+    <h1>first div</h1>
+        <ng-content select="h2"></ng-content>
+</div>
+<div>
+    <h1>second div</h1>
+        <ng-content select="h3"></ng-content>
+</div>
+<div>
+    <h1>third div</h1>
+        <ng-content select="button"></ng-content>   
+</div>
+
+<!-- class selectors in ng-content are used to project specific elements from the parent component into designated areas within the child component's template. In this case, the <h2>, <h3>, and <button> elements from the parent component will be projected into their respective divs in the child component. -->
+
+
+<div>
+    <h1>class Selector</h1>
+        <ng-content select=".c1"></ng-content>
+</div>    
+
+
+
+PArent Component
+
+<app-children>
+    <h2>welcome to Angular Party to first div</h2>
+    <h3>Lets Engjoy Second div</h3>
+    <button>Click Me</button>
+    <p class="c1">This is class selector content projected into child component.</p>
+</app-children>
+
+
+
+----------------------------------------------------------------------------------------
+
+ng -container
+
+group of elements (*ngIF,*ngFor) will add some aditionals nodes to html.
+
+ng-container will avoid additonal extra div tag 
+its for Logical container
+
+showContent = true;
+
+//--ng Container Example--
+<ng-container *ngIf="showContent">
+    <p>Content is displayed</p>
+</ng-container>
+
+
+---------------------------------------------------------------------------------------------------
+
+
+ng-template display data base on condition
+
+in .ts file
+showContent =true;
+
+In Html file
+
+<div *ngIf="showContent then ifBlock else elseBlock">
+    <p>Content is shown</p>
+</div>
+<ng-template #ifBlock>
+    <p>Content is shown</p>
+</ng-template>
+<ng-template #elseBlock>
+    <p>Content is hidden</p>
+</ng-template>
+
+
+
+--------------------------------------------------------------------------------------------------------------------------
+
+Early Loading  means?
+it is a default strategy  where all Applications modules ,components,Resources  are loaded upfront at initial time its self 
+that os called as Early Bidning
+
+
+even we dont required currently the data it will be loaded
+
+
+Drawback:
+
+it will eat time and performance even the compoent dont require that also will be loaded
+
+
+
+
+
+LAzy Loading means?
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

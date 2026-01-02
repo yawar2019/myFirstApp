@@ -1,0 +1,162 @@
+Guard Service?
+
+if you want to provide based on crediantial redirectin
+to routes you can take Guard Service
+
+To implement Guard Service three services you can take
+
+1)CAnActivate   used for Current Route
+2)CAnActivateChild  used for child Route
+3)CAnDeactivate  when we leave on Route to another Route
+
+
+
+
+To Implement Authentication based on User Crediantial first create AppService
+
+
+AppService will two Methods
+
+SetAuth method
+getAuth  method
+
+
+SetAuth Method will take as a parameter value to set your localStorage With Value
+
+
+setAuthDetails(value:string)
+  {
+    localStorage.setItem('ValidCred',value);
+  }
+
+
+getAuth Method will return value from localStorage
+
+  getAuthDetails()
+  {
+    return localStorage.getItem('ValidCred')?.toString();
+  }
+
+
+
+
+
+Create Login PAge
+
+
+
+Two Methods
+
+Login and Logout
+
+
+Login witll Set Auth Details value using setAuthDetails method
+
+
+setAuthDetails will set two type of value true or false
+
+for Login True
+
+login()
+{
+this.apps.setAuthDetails('true')
+}
+
+
+for Logout False 
+logOut()
+{
+
+this.apps.setAuthDetails('false')
+}
+
+
+when you navigating from one page to another page by clicking navigation button
+
+and we want user to not to access resource then implement Guard Service
+
+In Guard Service name is AppGuard Service
+
+
+here we are going to implement canActivate method
+
+
+
+
+CanActivate return either true or false
+
+
+In Our App.route ts,
+
+ {path:'about/:id/:name',component:About,canActivate:[AppGuardService]},
+
+
+CanActivate Child restrict for childRoute
+
+
+
+
+ {path:"contact",
+    component:Contact,
+    children:[{path:':id/:name',component:User,canActivateChild:[AppGuardService]}]
+    },
+
+
+canActivateChild it is boolean value true or false we we need to return
+
+
+if it is true child route will be accessable else not
+
+ {path:"contact",
+    component:Contact,
+    children:[{path:':id/:name',component:User,canActivateChild:[AppGuardService]},
+        
+    ]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

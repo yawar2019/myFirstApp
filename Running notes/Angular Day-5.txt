@@ -1,0 +1,104 @@
+  Angular is not a Controller base architure
+
+
+  angular is Componet based Architure
+
+
+Component:
+
+
+it is a fundamental building blocks for creating angular application
+
+ component are main building block for developing angular web and mobile appliations
+
+  each component represent a part pf large page 
+
+we are going to organize all structure together and making web application
+
+
+
+every componenthave few main parts
+
+    1) @Component Decorator that contains some configuration
+    2)Html Template that controls what you want to render
+    3)CSS
+4    4)  A typescript class with behaviour such as handling user input,making request to server  
+
+
+
+           Tmplate:<h1>Good Morning</h1>   TemplateURL:'./app.html'
+
+
+
+
+
+
+
+@Component({
+  selector: 'app-root',
+  imports: [RouterOutlet],
+  template: `<h1>Good Morning</h1> 
+               <h2>Tom and Jerry show is comming soon</h2>`,
+  styleUrl: './app.css'
+})
+
+
+
+
+
+
+@Component({
+  selector: 'app-root',
+  imports: [RouterOutlet],
+  templateUrl: './app.html',
+  styleUrl: './app.css'
+})
+
+
+
+    {{ }}--interpolation
+
+
+
+
+@Component({
+  selector: 'app-root',
+  imports: [RouterOutlet],
+  template: `<h1>{{title}}</h1>
+             <input type="text" value={{Hero}}/>`,
+  styleUrl: './app.css'
+})
+export class App {
+  title='My-first app';
+  Hero:string='Shaktiman';
+}
+
+
+@Component({
+  selector: 'app-root',
+  imports: [RouterOutlet],
+  template: `<h1>{{title}}</h1>
+             <input type="text" value={{Hero}}/>`,
+  styles: 'h1{ color:darkblue;font-size: xx-large;}'
+})
+
+
+  how to create component?
+
+
+      ng g c Home 
+
+      ng -angular 
+      g -Generate
+      C - Component
+      Home -Component Name
+
+
+how to setup our Component at Load Time?
+
+
+
+
+
+
+   

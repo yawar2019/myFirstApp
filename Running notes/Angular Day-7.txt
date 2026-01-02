@@ -1,0 +1,96 @@
+Day-7
+
+
+Revision
+
+
+Angular?
+
+
+
+
+TypeScript
+
+TypeScript is Strongle Type langauge
+TypesScript follow Static Type Checking
+it basically superset of your javascript which allow to catch errors early
+if you want to provide better compilation and help prject maintainability go for Typescript
+TypeScript going to be use in large Project
+
+
+
+Initialize Our Project for Typescript you need to have Typescript 
+
+
+how you can check Typescript?
+
+tsc --version
+
+
+how you can instaall typescript in prject?
+
+npm install -g typescript
+
+
+Setup your Typescript Project?
+
+tsc --init
+
+
+after running this this command you will see a file created
+
+tsconfig.json
+
+
+To Test Our Project Create a new file
+
+
+VariableEx.ts
+
+let fname:string="john";
+fname="Hello World";
+console.log(fname);
+
+
+to Build Our Typescript Project 
+
+Go To Terminal and type
+
+tsc variableEx.ts
+
+
+To Run Project:
+
+node variableEx
+
+note: it will give you result   Hello World Output
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,52 @@
+two types of forms
+
+template driven-([ngModel])-two way binding
+reactive forms--formControlName
+
+mostly binding of data,validations of data will be done at html or template side its called template driven forms
+Template driven Forms u need import----FormModule
+
+almost everything binding of data ,validations be done  at component side
+under formgroup,formcontrol that process is called as 
+reactive driven froms
+Reactive driven Forms import ReactiveFormModule
+
+example:
+
+FormGroup obj=new FormGroup(); wrong syntax
+obj:any=new ClassName();syntax
+StudentForm:FormGroup=new FormGroup({
+firstName:new FormControl("john"),
+lastNAMe:new FormControl(''abraham)
+....................
+
+
+})
+
+OnSubmit()
+{
+console.log(this.StudentForm)
+}
+
+
+
+<form  [formGroup]="StudentForm">
+<input type="text"
+ name="firstName"
+formControlName="firstName"/>
+
+<button type="button"  (click)="OnSubmit()">submit</button>
+
+
+</form>
+
+
+
+
+
+
+
+
+
+
+

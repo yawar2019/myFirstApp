@@ -1,0 +1,83 @@
+13/11/2025
+
+
+how we can read url values when we navigate from home to about page?
+
+
+
+Reading URl Values
+
+
+http://localhost:4200/about/1/test
+
+
+1 and test if you want to read it
+
+
+Import ActivatedRoute class
+
+
+ActivatedRoute will provide you snapshot for params with that you can read the value
+
+
+import {ActivatedRoutes} from '@angular/router';
+
+
+
+Example1
+
+In Home.ts
+
+
+GoToAbout()
+  {
+   this.router.navigateByUrl("/about/1/test")
+   // this.router.navigate(["/about",1,'test']);
+  }
+
+
+In Aboute.ts
+
+import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Params } from '@angular/router';
+
+@Component({
+  selector: 'app-about',
+  imports: [],
+  templateUrl: './about.html',
+  styleUrl: './about.css',
+})
+export class About  implements OnInit{
+
+ user={
+  id:"",
+  name:""
+ }
+ constructor(private route:ActivatedRoute)
+ {}
+ ngOnInit(): void {
+//  this.user={
+//   id:this.route.snapshot.params['id'],
+//   name:this.route.snapshot.params['name'],
+//  }
+
+ this.route.params.subscribe((data:Params)=>{
+this.user={
+  id:data['id'],
+  name:data['name']
+}
+ })
+
+}
+}
+How to Send Data as a Query Param?
+
+url will look like this 
+
+
+localhost:4200/about/2?page=1&search=gamini
+
+<a [queryParams]="{page:1,search:Gamini}">go to param with query string</a>
+
+
+

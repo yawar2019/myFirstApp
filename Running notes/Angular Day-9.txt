@@ -1,0 +1,88 @@
+Day 9
+
+
+ng new new project
+
+ng g c home
+
+
+app.component.ts
+app.ts
+
+
+myservice.service.ts
+myservice.ts
+
+
+if you want to execute code based on conditons then go for Control Flow Staments
+
+
+if,
+if-else,
+if-elseif-else,
+switch case
+
+
+Example:
+
+@if (age>18) {
+  <p>you can vote</p>
+} @else {
+  <p>you cannot vote</p>
+}
+
+
+
+
+
+
+@if (age>18) {
+  <p>you can vote</p>
+} @else if(age==18) {
+  <p>you can vote welcome for firt time you are giving vote</p>
+}
+@else{
+  <p>not elligible to vote</p>
+}
+
+
+
+   @switch(variableName) {
+
+@case ('Heman')
+{
+<p>is haing power of universe</p>
+}
+
+@case ('Women')
+{
+<p>is having power of Home</p>
+}
+
+}
+
+
+
+looping:if you want to execute any statement multiple time based on condition
+
+
+app.ts
+ carList=['BMW','TATA','Nano']
+
+
+app.html
+
+
+@for (item of carList ; track item) {  
+  <ul>
+    <li>{{item}}</li>
+  </ul>
+}
+
+
+
+
+    
+
+
+

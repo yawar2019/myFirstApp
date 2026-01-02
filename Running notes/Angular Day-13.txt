@@ -1,0 +1,225 @@
+what is function?
+
+
+function is block of code which is going to be call whnever the use is going to call
+by its name
+
+
+fun()
+{
+
+code
+
+
+}
+
+
+event Binding : in Event Binding we use '()' to bind event to a function
+
+
+Example :
+
+fun2()
+  {
+    alert('I am Iron Man');
+  }  
+
+
+<button  (click)="fun2()">Click Me</button>
+
+
+here Html Onclick will change to (click) and going to be assign with fun2() method value
+
+
+this () bracket to event it is called as Event Binding
+
+
+
+ fun3(a:any)
+  {
+    alert('I am Iron Man '+a);
+  }
+
+
+
+<button  (click)="fun3('who became Dr Doom')">Click Me</button>
+
+------------------------------------------
+
+
+      Anyones knows what is Routing?
+
+
+Def1:
+
+routing means controlling which page/component 
+should open the user visit a specific url
+
+
+
+Def2:
+Routing is used to map the routes path to component
+yes, its moving from one component to other
+
+
+
+whenever the user want to navigate from one component to another Component we are using Routing
+
+
+Example on Navigation 
+
+step1:
+first Create 4 Components
+
+
+Home
+About
+Contact
+Layout
+
+
+Command:
+
+ ng g c Home
+ ng g c About
+ ng g c Contact
+ ng g c Layout
+
+
+Step2:
+Go to app.route.ts
+
+
+
+
+import { Routes } from '@angular/router';
+import { Home } from './home/home';
+import { About } from './about/about';
+import { Contact } from './contact/contact';
+
+export const routes: Routes = [
+    {path:"home",component:Home},
+    {path:"about",component:About},
+    {path:"contact",component:Contact},
+];
+
+
+
+
+Go to Url and Copy Nav Code to Layout.html
+
+
+https://getbootstrap.com/docs/5.0/components/navs-tabs/
+
+***********Layout.html***********************
+
+<ul class="nav">
+  <li class="nav-item">
+    <a class="nav-link active" aria-current="page" routerLink="/home">Home</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" routerLink="/about">About</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" routerLink="/contact">Contact</a>
+  </li>
+   
+</ul>
+
+<div class="container-fluid">
+<router-outlet></router-outlet>
+</div>
+
+
+add index.html bootstrap cs,js refrence
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+  
+***********************************************
+
+Layout.ts
+
+Import all the component which you want to navigate.
+add RouterOutlet
+
+RouterOutlet is a placeholder wher your components going to be loadded
+
+
+
+Import RouterLink so that navigation without reloading page can happen
+
+
+*********Layout.ts************************
+
+import { Component } from '@angular/core';
+import { Home } from '../home/home';
+import { About } from '../about/about';
+import { Contact } from '../contact/contact';
+import { RouterLink, RouterOutlet } from '@angular/router';
+
+@Component({
+  selector: 'app-layout',
+  imports: [Home,About,Contact,RouterOutlet,RouterLink],
+  templateUrl: './layout.html',
+  styleUrl: './layout.css',
+})
+export class Layout {
+
+}
+
+****************************************
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+

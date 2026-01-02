@@ -1,0 +1,233 @@
+In Angular  if you want to develop template Driven fOrms 
+
+step1
+Go to officaial website of Bootstrap
+https://getbootstrap.com/docs/5.0/forms/validation/
+
+
+click on validation
+go to right side and copy all form and paste in SimpleTemplateForm 
+Html page
+
+
+step 2 
+replace id with name for input element  and add StudentObj
+
+//in ts
+studentObj:any={
+
+firstName:"",
+lastName:"",
+userName:"",
+city:"",
+state:"",
+ZipCode:"",
+IsAgreed:false
+
+
+}
+
+step3
+add  ngModel to every input elelemt 
+
+syntax and example
+
+[(ngModel)]="studentObj.firstName"
+
+
+    <input type="text" class="form-control" name="firstName" [(ngModel)]="studentObj.firstName" value="Otto" required>
+
+
+make sure name and ngModel to have same name 
+
+Step4:
+for ngModel import  in COmponent
+import : [commonModule,formsModule]
+
+step 5 : add for Dropdown List
+
+ts
+
+IndiaStates=[
+    {id:1,name:'Telangana'},
+    {id:2,name:'Andhra Pradesh'},
+    {id:3,name:'Odisa'},]
+
+html
+
+ <div class="col-md-3">
+    <label for="validationCustom04" class="form-label">State</label>
+    <select class="form-select" name="state" [(ngModel)]="studentObj.state" required>
+      <option selected disabled value="">Choose...</option>
+      <option *ngFor="let state of IndiaStates" value="{{state.id}}">{{state.name}}</option>
+    </select>
+    <div class="invalid-feedback">
+      Please select a valid state.
+    </div>
+  </div>
+
+step 6:
+In form Tag add this code
+
+<form #stdForm="ngForm">
+
+
+step 7: in Ts add event OnSubmit
+
+
+OnSubmit(){
+console.log(this .StudentObj)
+}
+
+
+
+
+
+
+---------------------------------------------------------------------------------------------------------------------------------------
+
+REactive Form Component PRocedure
+
+ts
+
+Step1 create FormGroup 
+
+studentForm:FormGroup=new FormGroup({...})
+
+Step2
+inside FormGroup add FormControlNAme
+
+studentForm:FormGroup=new FormGroup({
+
+firstName:new FormControl(""),
+lastName:new FormControl(""),
+userName:new FormControl(""),
+city:new FormControl(""),
+state:new FormControl(""),
+zipCode:new FormControl(""),
+IsAgreed:new FormControl(""),
+
+  })                   
+
+
+Step3:
+Addin imports 
+ imports: [CommonModule,ReactiveFormsModule],
+
+Step4:
+add States
+
+ IndiaStates=[
+    {id:1,name:'Telangana'},
+    {id:2,name:'Andhra Pradesh'},
+    {id:3,name:'Odisa'}]
+
+Step5
+
+OnSubmit()
+{
+  console.log(this.studentForm);
+}
+
+
+
+html 
+
+first go to official webist bootstrap
+
+https://getbootstrap.com/docs/5.0/forms/validation/
+
+copy the form and paste it
+
+<p>reactive-form-example works!</p>
+
+
+<form class="row g-3 needs-validation" [formGroup]="studentForm">
+  <div class="col-md-4">
+    <label for="validationCustom01" class="form-label">First name</label>
+    <input type="text" class="form-control" name="firstName" formControlName="firstName" value="Mark" required>
+    <div class="valid-feedback">
+      Looks good!
+    </div>
+  </div>
+  <div class="col-md-4">
+    <label for="validationCustom02" class="form-label">Last name</label>
+    <input type="text" class="form-control" name="lastName" formControlName="lastName" value="Otto" required>
+    <div class="valid-feedback">
+      Looks good!
+    </div>
+  </div>
+  <div class="col-md-4">
+    <label for="validationCustomUsername" class="form-label">Username</label>
+    <div class="input-group has-validation">
+      <span class="input-group-text" id="inputGroupPrepend">@</span>
+      <input type="text" class="form-control" name="userName" formControlName="userName" aria-describedby="inputGroupPrepend" required>
+      <div class="invalid-feedback">
+        Please choose a username.
+      </div>
+    </div>
+  </div>
+  <div class="col-md-6">
+    <label for="validationCustom03" class="form-label">City</label>
+    <input type="text" class="form-control" name="city" formControlName="city" required>
+    <div class="invalid-feedback">
+      Please provide a valid city.
+    </div>
+  </div>
+  <div class="col-md-3">
+    <label for="validationCustom04" class="form-label">State</label>
+    <select class="form-select" name="state" formControlName="state" required>
+      <option selected disabled value="">Choose...</option>
+      <option *ngFor="let state of IndiaStates" value="{{state.id}}">{{state.name}}</option>
+    </select>
+    <div class="invalid-feedback">
+      Please select a valid state.
+    </div>
+  </div>
+  <div class="col-md-3">
+    <label for="validationCustom05" class="form-label">Zip</label>
+    <input type="text" class="form-control" name="zipCode" formControlName="zipCode" required>
+    <div class="invalid-feedback">
+      Please provide a valid zip.
+    </div>
+  </div>
+  <div class="col-12">
+    <div class="form-check">
+      <input class="form-check-input" type="checkbox" value="" name="IsAgreed" formControlName="IsAgreed"required>
+      <label class="form-check-label" for="invalidCheck">
+        Agree to terms and conditions
+      </label>
+      <div class="invalid-feedback">
+        You must agree before submitting.
+      </div>
+    </div>
+  </div>
+  <div class="col-12">
+    <button class="btn btn-primary" type="button" (click)="OnSubmit()">Submit form</button>
+  </div>
+</form>
+
+
+
+here what we need to observe 
+
+1 name="firstName" formControlName="firstName" 
+2 [formGroup]="studentForm"
+3 (click)="OnSubmit()"
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

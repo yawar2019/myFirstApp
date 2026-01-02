@@ -1,0 +1,112 @@
+Binding it is process of linking the data from the componentto view (template)
+when the data changes automoticaly your view will reflected
+
+different types of binding
+
+
+Text Interpolation 
+Attribute bidning
+class binding
+style binding
+property 
+Event
+two way data binding
+
+
+Text Interpolation Binding
+
+
+simplest binding we use bracket {{}}
+
+
+Attribute Binding:
+
+
+it is used to connect a property  from the component 
+to html elements attribute
+
+
+<div [attr.title]='name'>
+ 
+
+it helps to set the value for the attribute of the html element 
+use syntax   [attr,anyname]="property"
+
+
+
+class component 
+{
+
+title ="hi everyone"
+}
+
+
+
+<div [attr.info]="title">....</div>
+
+
+
+
+Poperty Binding:
+
+it is used to bind data from the property of component to html dom
+
+
+use bracket  []
+
+ dynamically your value will bind to html
+
+
+
+
+<div [attr.grade]="title">hello</div>
+<input type="text" [value]="Hero" [attr.stdage]="age"/>
+<p [attr.name]="Hero">haha</p>
+<x></x>
+
+
+
+Class Binding:it is used to bind the data from component to class property
+
+Example 1:
+component:
+
+xyz="myRedclass";
+
+Html:
+ <h1 [class]="xyz">hello2</h1> <!-- right -->
+
+css:
+
+.myRedclass
+{
+color:red;
+}
+
+
+use [] square brackets to bind the data of property
+
+as it square brackets use with class it is called as class property
+
+Example 2
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

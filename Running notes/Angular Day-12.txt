@@ -1,0 +1,82 @@
+Day-12
+
+
+In Angular Class Binding can be happen using Object.
+
+example:
+
+firstclassObj={first:false,second:true};//ts
+<p [class]="firstclassObj">great deal</p>//.html
+
+style binding :
+
+
+to bind Style we use Style Binding 
+
+html:<p [style]="propertyName">hello style</p>
+
+
+<p [style]="firstStyle">hello style</p>
+ts:firstStyle={"color":"red","font-size":"200px"}
+
+
+
+
+<p [style.color]="secondStyle">hello second style</p>
+ts:secondStyle='red';
+
+
+Two Way Binding :
+
+             it is a process where your input value will be tracked by ngModel
+
+Syntax:
+
+             [(ngModel)]="propertyName"
+
+
+  Example           
+
+
+
+<input type="text" [(ngModel)]="UserName">
+{{UserName}}
+
+
+
+ts:
+UserName='Sagar';
+
+
+
+
+NgModel will be present inside FormModules
+
+
+
+Import FormModule in Component (ts file)
+
+import { FormsModule } from '@angular/forms';
+
+
+
+
+
+
+Example
+
+
+import { FormsModule } from '@angular/forms';
+
+UserName='Sagar';
+
+
+
+Html:
+
+
+<input type="text" [(ngModel)]="UserName">
+{{UserName}}
+
+
+

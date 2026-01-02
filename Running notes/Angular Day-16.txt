@@ -1,0 +1,114 @@
+there are two ways to read the value from url
+
+1)path parameter
+2)Query parameter
+
+
+
+PAth parameter
+
+
+localhost:4200/about----url
+
+localhost:4200/about/anand/1211----path parameter
+
+ path:about/:name/:id
+
+              name='anand'
+              id:1211
+
+
+
+to read the value of your URL
+
+we have two approaches to read url value by using 
+activatedRoute Class
+
+constructor(private route:ActivatedRoute)
+
+1)snapshot
+2)Subscribe Observable method
+
+--------------------------------
+In Snapshot we use route variable
+
+name:this.route.snapshot.params['name']
+
+id:this.route.snapshot.params['id']
+
+here mandatory to give id and name because path 
+parameter is along with url
+---------------------------------
+
+Subscribe Method
+
+it is an observable method of Rxjx concept
+
+obserable is like containers which store result
+
+we obseravable to get data whenever we need it
+
+
+we have somanay obseravable method like
+
+
+subscribe
+unsubscribe
+of
+array
+
+
+
+subscribe method obserable to get the value of path parameter
+
+this.route.params.subscribe(data:Params){
+
+id:data['id']
+name:data['name']
+}
+
+
+this.route.params.subscribe((data:Params)=>{
+this.user={
+  id:data['id'],
+  name:data['name']
+}
+ })
+
+
+In your URL in Anchor tag (a) how you should write the code to send data uisng path and querystring}?
+
+
+    <a class="nav-link" [routerLink]="['/about',1,'sample']" [queryParams]="{page:1,search:'Gamini'}" routerLinkActive="active" [routerLinkActiveOptions]="{exact:
+
+
+
+path parameter:  [routerLink]="['/about',1,'sample']"
+
+query parameter: [queryParams]="{page:1,search:'Gamini'}"
+
+
+
+ <a  [routerLink]="['/about',1,'sample']">About</a>
+
+   http:localhost/about/1/sample --display in url
+
+ <a routerLink='/about' [queryParams]="{page:1,search:'Gamini'}">About</a>
+
+      http:localhost/about?page=1&search=Gemini---diplay in url
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

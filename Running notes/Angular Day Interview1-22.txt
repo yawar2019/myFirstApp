@@ -1,0 +1,139 @@
+1)What is An Angular ?
+angular is a framework to develop web application.
+Angular is frontend framework developed by google for making single page applications
+component based framework
+it is web application framwework  to develop fast dynamic single page application
+Angular is Type script based open source Front end framework developed by Google
+angular is a framework its empower the developer bulit fast
+
+
+2) how to check which angular version installed?
+ng -version
+
+3)how to check which node version
+node -v
+
+4)Angular is Component or Controller Based Architecture?
+Component 
+
+5)what do you mean by component?
+Three files combination
+HTML,TypeScript CSS
+It is building block of the application
+defined with @component decorator
+It is just a simple classs
+To create component ng g c nameofcomponet
+
+6)what is Difference between Template and TemlateURL?
+
+templateURL need to give URL
+in template define html inline
+Template url contain html file where template will directly contain html code
+templateUrl is used to define external html file and template is used to define html file in ts file
+
+7)what are the different types of Selector we have it?
+class,attribute and tag
+
+8)how to make startup component? 
+in main.ts import the required component and pass it to bootstrap component method and in index.html change selector name
+
+9)what are the different ways to Bind the Data?
+interpolation,property,event,two-way,class,style,attribute 
+10) difference between attribute and property binding?
+
+Property reflect in Dom level and attribute is for html level
+And in property we use []
+property-<input [value]="username">
+
+Attribute - Static , HTML,-base, Exit only at initial load
+Property- Dynamic, DOM-base,
+
+
+11)What is syntax defining class based on boolean condition?
+
+ts
+
+myclassobj={firstclass:true,secondClass:false}
+
+css
+
+
+firstclass{
+color:'red'
+}
+
+secondClass
+{
+fontsize:'18px'
+
+}
+
+12) how to send infromation from parent component to child?
+
+@input
+We send data from parent to child using the @Input() decorator.
+The parent binds to the child’s input property using [propertyName]="value".
+
+Data is send from parent to child using @input  decorator in the child component
+The parent binds data to the child components input  using property binding.
+
+Parent Component:
+
+
+
+Child Component
+import { Component, Input } from '@angular/core';
+
+@Component({
+  selector: 'app-child',
+  templateUrl: './child.component.html'
+})
+export class ChildComponent {
+
+  @Input() dataFromParent: string = '';
+}
+<p>Data from Parent: {{ dataFromParent }}</p>
+
+
+Parent component html
+<app-child [dataFromParent] = "ParentData"></app-child>
+
+
+
+1)Example on event binding,ngClass Binding ,Property Binding
+
+2)Simple Routing 
+
+3)How to send data from parent to Child 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

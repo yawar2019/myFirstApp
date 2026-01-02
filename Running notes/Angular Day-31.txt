@@ -1,0 +1,38 @@
+life cycle of hooks
+
+1) constructor is called first and used for performing dependecy Injection
+or anything you want to execute before any hooks life cycle method is called
+
+2)ngOnInit
+is going to be called after Constructor and best usage is to initialize Values
+
+3)ngOnchanges Method
+Called whenever your @Input() find Changes 
+its parameter is to check the current ,previous,firstChanged detail
+need to be define inside child component
+
+4)ngDestroy
+
+its called wheneever you navigate from one Component to Another
+or leave anyother Component ngDestroy method is Called
+
+5)ngDoCheck
+
+this method is called whenever any changes it detect inside the Variable,property,arrays
+
+6)ngAfterContentInit:
+is called whenever you are going to load Data
+it is also called whenever you are going to pass data to ng-content directives
+
+7)ngAfterContentChecked
+
+it is called to check data
+
+8)ngAfterViewInit:
+
+called to initialize Components
+
+9) ngAfterChecked
+
+called when your data is loaded or fully loaded
+

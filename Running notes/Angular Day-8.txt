@@ -1,0 +1,79 @@
+Day-8
+
+
+Interface
+
+
+it is used to define Object Structure
+whatever we define in interface all that property compulsary 
+need to implemented 
+interface is going to be declared by keyword Interface
+
+
+interface Person
+{
+name:string;
+age:number;
+}
+
+
+const person={
+
+  name:"xyz";
+  age:12
+  
+}
+
+
+
+Classes:
+
+         To Create any class we use keyword that is Class
+
+         class is like a container,skeleton
+                    or
+
+         it is a collection of variable and methods
+
+
+if you use class you will get oops(object oreinted specification) advantage
+
+
+              class Animal
+            {
+              name:string='';
+              sound:string='';
+                 
+           constructor(name:string,sound:string)
+             {
+              this.name=name;
+              this.sound=sound; 
+             }
+             speak():void
+                         {
+                           console.log(`${this.name} make this sound ${this.sound}`);
+
+                         }
+
+
+            }
+
+let dog=new Animal('Dog','Bow Bow');
+dog.speak();
+
+let cow=new Animal('Cow','mow mow');
+cow.speak();
+
+
+
+
+
+                
+
+
+
+
+
+
+
+

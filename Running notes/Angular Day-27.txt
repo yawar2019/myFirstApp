@@ -1,0 +1,78 @@
+Creates an AbstractControl from a user-specified configuration.
+
+The FormBuilder provides syntactic sugar that shortens creating instances of a FormControl, FormGroup, or FormArray. It reduces the amount of boilerplate needed to build complex forms.
+
+studentForm.get('firstname').hasError(''Required")
+----------------------------------------------------------
+
+
+What is FormBuilder?
+The FormBuilder provides syntactic sugar that shortens creating instances of a FormControl
+it is another of writing reactive form code
+its like a key and value pair
+here in UI you  will see formControlName
+
+step1 to implement
+
+import :
+
+import {FormBuilder, AbstractControl, FormGroup, ValidationErrors, Validators, ReactiveFormsModule } from '@angular/forms';
+
+ts Code:
+
+ 
+
+  studentForm: FormGroup;
+  constructor(private fbuilder:FormBuilder)
+  {
+this.studentForm=this.fbuilder.group(
+  {
+    firstname:['',[Validators.required]],
+    lastname:'',
+    username:['',[Validators.required]],
+    city:'',
+    state:'',
+    zipcode:'',
+    IsAgreed:false
+
+  })
+  }
+
+ 
+    OnSubmit()
+{
+  console.log(this.studentForm);
+}
+
+
+Html Side what code we need to write it ?
+
+
+<p>form-builder works!</p>
+
+
+<form class="row g-3 needs-validation" [formGroup]="studentForm">
+  <div class="col-md-4">
+    <label for="validationCustom01" class="form-label">First name</label>
+
+
+    <input type="text" class="form-control" formControlName="firstname">
+
+
+<div class="text-danger">
+  <div *ngIf="studentForm.get('firstname')?.touched && studentForm.get('firstname')?.invalid && studentForm.get('firstname')?.dirty">
+<div  *ngIf="studentForm.get('firstname')?.hasError('required')">
+  first Name is required
+</div>
+  </div>
+</div>
+</form>
+
+
+
+
+
+
+
+
+

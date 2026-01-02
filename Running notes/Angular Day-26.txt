@@ -1,0 +1,41 @@
+VAlidations
+
+in Reactive Forms Validation will be done from Componet side
+
+ts Code
+stdForm:FormGroup=new FormGroup(
+{
+
+firstName:new FormContrl(value,[Validators.required,Validators.maxlength])//this code describe your Validations
+}
+
+
+)
+
+Html Code 
+ <input type="text" class="form-control" name="lastName" formControlName="lastName" value="Otto" required>
+    <div class="text-danger">
+      @if(studentForm.controls['lastName'].errors?.['maxlength']){
+     max 3 characters are allowed
+      }
+      @else if(studentForm.controls['lastName'].errors?.['required'] )
+      {
+required
+      }
+    </div>
+
+
+
+FormBuilder:
+
+
+
+
+
+
+
+
+
+
+
+

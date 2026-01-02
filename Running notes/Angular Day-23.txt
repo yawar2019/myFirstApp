@@ -1,0 +1,113 @@
+How to Send data from PArent to Child 
+A)creating  @Input() at Child Component
+
+
+parentComponent
+<app-child [ParentData]="Hero"></app-child>
+
+
+
+
+childComponent
+{
+
+@Input() Parent Data:string="";
+
+}
+
+.html
+
+{{ParentData}}
+
+
+  @Input({required:true}) ParentData1:string="";
+
+
+if in Child Component what Input () method declared as required :true then it is mandatory
+
+parent component need to send data child component
+
+
+How to Send data from child component to PArent  Component?
+
+it can happen with the help eventEmitter
+
+Step1
+So in Child Component define @Output variable 
+
+@Output is Decorator
+@Output childData=new EventEmitter();----step1
+
+
+
+step2
+
+Create one function
+
+SendChildInfo() //-step2
+{
+
+this.childData.emit('Got Child Data');
+}
+
+
+step3
+
+//parent component
+<app-hero (childData)="message=$event" ></app-hero> 
+event is Our predefind variable when event raise from child Componet it will be send 
+
+parent Compoent in $event variable
+
+message=$event" 
+
+{{message}}
+
+
+
+In Our Angular we have Two different Forms Tempate 
+
+Template Driven Forms
+we almost use html code
+two way binding
+two way Model Binding
+
+
+Dynamic Form (Reactive Forms)
+we almost use ts file code 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

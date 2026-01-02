@@ -1,0 +1,267 @@
+Directives
+
+
+Directives are classes that add additional behavior to elements in your Angular applications.
+
+
+<p  abc>
+
+
+Directive Types	are 4 types
+
+Components	Used with a template. This type of directive is the most common directive type.
+
+Attribute directives	Change the appearance or behavior of an element, component, or another directive.
+
+Structural directives	Change the DOM layout by adding and removing DOM elements.
+
+Custom Diractives
+
+
+
+
+
+1)  component Directives
+
+
+@component({
+selector
+template
+})
+
+class AppComponent
+{
+}
+
+
+
+2) Attribute Directives :
+
+changing the behaviour of html using attributes,properties
+
+
+[ngClass]
+[ngStyle]
+
+
+
+ngClass- we create some css or bootstrap css and we can assign to ngClass
+
+
+<p [ngClass]="myClass">Hi</p>
+<p [ngStyle]="mystyle">
+
+
+if it was displaying normally black now because of myclass it will give red color
+
+
+this is inheriting from package '@angular/common';
+
+
+import { CommonModule } from '@angular/common';
+
+
+
+
+
+Example
+
+Html Code:
+
+<p [ngClass]="xyz" class="second third">Pyara Mohan</p>
+<p [ngStyle]="firstStyle" style="font-size: xx-large;">Hello Style</p>
+
+
+ts Code:
+
+xyz="myRedclass";
+
+firstStyle={"color":"blue","background-color":"orange"};
+
+.css code
+
+
+.myRedclass
+{
+color:red;
+}
+.first
+{
+    color:green;
+}
+.second
+{
+    font-size: xx-large;
+}
+.third
+{
+    background-color: cadetblue;
+}
+
+
+
+3) Structural Directives
+
+
+In Angular, structural directives are used to shape or reshape the DOM's structure 
+by adding, removing, or manipulating elements and their descendants. 
+They are a fundamental concept for controlling the layout and structure of the view
+
+
+this is inheriting from package '@angular/common';
+
+
+import { CommonModule } from '@angular/common';
+
+* is prefixed and Mandatory
+
+
+*ngIf  based on condition  display data
+
+
+.ts code
+
+ isAvailable=false;
+
+
+.html Code
+
+<p *ngIf="isAvailable; then IFBlock ; else ElseBlock">
+  Pinky and Brain
+</p>
+<ng-template #IFBlock>
+ <span> Pinky is Female mouse </span>   <!-- true -->
+</ng-template>
+<ng-template #ElseBlock>
+ <span> Brain is Male mouse </span>   <!-- false -->
+</ng-template>
+
+
+syntax:
+
+<p *ngIf="condition; then trueStatement ; else FalseStatement">
+
+
+
+
+
+
+
+
+*ngSwitch:
+
+based on value multple cases are match if any case match it will display the data of that case
+else Default will be displayed
+
+
+HTML Code
+<div [ngSwitch]="Hero">
+<div *ngSwitchCase="'Spiderman'">Spiderman</div>
+<div *ngSwitchCase="'Ironman'">Ironman</div>
+<div *ngSwitchCase="'Heman'">Heman</div>
+<div *ngSwitchDefault>Wonderwomen</div>
+</div>
+
+TS:
+Hero='Ironman'
+
+
+*ngFor
+
+this is for looping means repeating statement based on Conditon
+
+
+ts Code
+
+carList=['BMW','TATA','Nano'];
+
+Html Code:
+
+<div *ngFor="let car of carList">
+<ul>
+  <li>{{car}}</li>
+</ul>
+</div>
+
+
+-------
+
+ts Code
+sports=[
+    {id:1,name:'Football'}
+   ,{id:2,name:'Cricket'},
+     {id:3,name:'Kabadi'}]
+
+Html Code
+
+<div *ngFor="let sport of sports">
+<ul>
+  <li>{{sport.id}}</li>
+  <li>{{sport.name}}</li>
+</ul>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+*ngFor
+
+
+
+
+
+
+
+
+
+
+
+
+
+

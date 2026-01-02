@@ -1,0 +1,61 @@
+Ag grid 
+
+
+AgGrid  help to to display data in the form of tabular format
+
+it provide so manay library which help us to perform sorting ,filtering
+
+with ag-grid you can have charts and advanced filtering
+
+
+step1 instalation of Ag-grid
+
+ 
+enter in the terminal npm install ag-grid-angular
+
+
+step2
+create Component
+AggridExampleComponent
+
+ng g c AggridExampleComponent
+
+step3:
+import 
+import {ModuleRegistry,AllCommunityModule, ColDef } from 'ag-grid-community';
+import { AgGridModule } from 'ag-grid-angular';
+
+step4 
+Register modules
+
+
+ModuleRegistry.registerModules([AllCommunityModule]);
+imports: [AgGridModule],
+step5 
+Add ColumnDefs
+
+columnDefs:ColDef[] =[
+  {headerName:'EmpId',field:'EmpId', filter: true},
+  {headerName:'EmpName',field:'EmpName', filter: true},
+  {headerName:'EmpSalary',field:'EmpSalary', filter: true},
+
+]
+Step6 
+Add RowDefs
+
+rowData=[{EmpId:1,EmpName:'abc',EmpSalary:2345},
+        {EmpId:2,EmpName:'xyz',EmpSalary:3345},
+        {EmpId:3,EmpName:'pqr',EmpSalary:4345}]
+}
+
+step7
+<ag-grid-angular 
+style="width: 600px; height: 300px;"
+[rowData]="rowData"
+[columnDefs]="columnDefs"
+class="ag-theme-angular">
+</ag-grid-angular>
+
+
+
+

@@ -1,0 +1,174 @@
+Day-6
+
+
+    to create angular application 
+
+Create:
+   ng new myfirstapp
+
+
+Run:
+   cd myfirstapp
+
+   ng serve
+
+
+
+
+Command for Creating new Component
+
+ng g c Home
+
+or 
+
+ng generate component Home
+
+
+what are the files will be created
+
+   4 files 
+
+Home.html
+Home.Css
+Home.ts
+Home.spec.ts
+
+
+what is a Component?
+
+
+Component is simple javascript class
+
+every class will be prefixed with Export
+
+
+Export make your class available every where so that that class you can use it
+
+
+
+In class you can declare Variable,Methods,constructor etc..
+
+
+class  will be storngly type
+
+
+to make any class as Component what you need to do it?
+
+@Component() Decorator on above your class
+
+
+what are the configuration are setup using @Component Decorator?
+
+
+1)Component Decorator will mention what Html template or Template Url for Component we can use
+
+2)CSS for Html
+
+3)Selector for your Component : it explain where your Component is going to be loaded
+
+4)Imports : what service,component,pipes,directives we can usein Our Component
+
+
+
+Selector 
+
+which Load your component
+
+
+3 selectors
+
+1)tag
+2)class
+3)Attribute 
+
+
+
+tag:<x></x>
+selector:'x'
+
+
+class:<div class="x"></div>
+selector: '.x'
+
+
+Attribute:<div x></div>
+selector: [x]
+
+
+
+How to call/display inside AppComponent Home Component?
+
+
+step 1: Inside App.ts component decorator import your Home Component
+
+imports:[Home]
+
+
+import {Home} from './Home';
+   @Component({
+  imports:[Home]
+})
+
+
+
+
+Step2: Inside App.html
+
+<x></x> selector you need to mention
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

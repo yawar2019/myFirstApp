@@ -1,0 +1,128 @@
+
+ In angular @viewChild decorator help to allow parent Component to Access Child
+Component,directives ,DomElements directly
+
+viewchild can help us to access single Element
+return us single object
+faster in performance
+
+purpose:
+Access Child Component or Element
+@viewChild Enable parent component to access or interact with Child Componet 
+Direct Interaction Parent Component can access child component methodes ,properties 
+event manuplate it
+
+Template Reference Variable with that access variables or dom Elements
+
+
+
+  / start example1
+  @ViewChild('rrr') rinput!: ElementRef;
+
+  ngAfterViewInit(): void {
+    this.rinput.nativeElement.focus();
+  }
+
+ShowAlert()
+{
+alert(this.rinput.nativeElement.value);
+}
+/ end example1
+
+
+
+html code is  
+
+
+<input type="text" #rrr />
+
+
+<button (click)="ShowAlert()">click me </button>
+
+
+
+
+ViewChildren:
+
+viewchildren can help us to access multiple Element
+return us QueryList object
+here loop required
+slower in performance
+
+
+
+steps to access child property and methods inside parent component
+
+Create Parent Component with name of ViewChildExample
+Create Child Component with name of  ViewChildExample2
+
+
+Add Below Code inside ViewChildExample2(child component)
+
+export class ViewChildexample2 {
+
+  ExamResult='Pass';
+  ShowChildExample()
+  {
+    console.log('Child Method is Called');
+  }
+
+}
+
+Next we need to add in  ViewChildExample (Parent Component)
+
+
+import { ViewChild} from '@angular/core';
+import { ViewChildexample2 } from '../view-childexample2/view-childexample2';
+
+@Component({
+  selector: 'app-view-child-example',
+  imports: [ViewChildexample2],
+  templateUrl: './view-child-example.html',
+  styleUrl: './view-child-example.css'
+})
+export class ViewChildExample 
+
+
+@ViewChild(ViewChildexample2) childComponent!: ViewChildexample2;
+
+ show()
+  {
+    console.log(this.childComponent.ExamResult);
+    console.log(this.childComponent.ShowChildExample());
+  }
+
+}
+
+In Our Html
+
+<app-view-childexample2></app-view-childexample2>
+
+
+if you want to access child Component inside PArent Component you can can by using ViewChild(''component name')
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

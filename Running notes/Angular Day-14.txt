@@ -1,0 +1,71 @@
+How to make menu link active
+
+
+
+import routerLinkActive
+
+
+
+import { RouterLink, RouterLinkActive, RouterOutlet } from '@angular/router';
+
+  imports: [Home,About,Contact,RouterOutlet,RouterLink,RouterLinkActive],
+
+<ul class="nav nav-pills">  
+  <li class="nav-item">
+    <a class="nav-link active" aria-current="page" routerLink="/home" routerLinkActive="active">Home</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" routerLink="/about" routerLinkActive="active">About</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" routerLink="/contact" routerLinkActive="active">Contact</a>
+  </li>
+   
+</ul>
+
+nav-pills-highlight menu
+routerLinkActive="active"
+
+[routerLinkActiveOptions]="{exact:
+true}"  it will resolve the issue of selecting css class to only one menu
+
+without that active class will not hoever background coloe properly
+
+
+wherever u r going move that will be added a active class dynamically
+
+
+
+
+How to navigate using Programitically?
+
+
+
+
+
+
+import Router from @angular Router library
+// this.router.navigateByUrl("/about")
+    this.router.navigate(["/about"]);
+
+
+
+
+
+
+http://localhost:4200/about/1/sample how to read this
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

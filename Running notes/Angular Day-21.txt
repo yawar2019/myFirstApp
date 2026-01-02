@@ -1,0 +1,180 @@
+Custom Directives
+
+it is user defined directives .if the user want to define its own 
+directive with custom logic then he can go for custom directives
+
+
+
+command to create Custom Directives
+
+
+ng g d AppHighlightTextDirectives
+
+
+import { Directive } from '@angular/core';
+
+@Directive({
+  selector: '[appAppHighlightTextDirectives]'
+})
+export class AppHighlightTextDirectives {
+
+  constructor() { }
+
+}
+
+Example:
+import { Directive, ElementRef, OnInit } from '@angular/core';
+
+@Directive({
+  selector: '[appAppHighlightTextDirectives]'
+})
+export class AppHighlightTextDirectives  implements OnInit {
+
+  constructor(private element :ElementRef) 
+  { 
+
+
+  }
+  ngOnInit(): void {
+  (this.element.nativeElement as HTMLElement).style.color="Green";
+  }
+
+}
+
+
+In App.html
+
+<div appAppHighlightTextDirectives>Hello Directives</div>
+
+It will show Hello Directives green color
+
+
+HostListner
+
+The @HostListener decorator in Angular is used to subscribe to events
+ of the host element where a directive or component is placed, and to provide 
+a handler method to run when that event occurs. 
+It offers a declarative way to handle DOM events, 
+which is more memory-efficient and cleaner than manually
+ using addEventListener in vanilla JavaScript. 
+K
+
+@HostListener('click') onclick(event:Event)
+  {
+  this.renderer.setStyle(this.element.nativeElement,"color","Blue");
+
+  }
+}
+
+
+
+How to Send Data from one Component To Another Component?
+
+@Input Decorator is meant to catch the value from parent Component
+
+
+Parent Component is App
+Child Component is Hero
+
+
+How To Call child Component in PArent Component
+
+<app-hero></app-hero>
+
+
+if you want to pass value from 
+parent Component (appComponent) to child component(HeroComponent)
+
+
+step1 Create in Child Component 
+
+@Input() ---Create Input Decorator 
+
+@Input  Decorator will catch value from parent component 
+
+so when ever you want to send data from parent to child use @Input decorator
+
+Hero.ts  (Child Component)
+
+
+export class Hero {
+
+  @Input() parentData:string="";
+}
+ 
+name of Input() Decorator is parentData
+
+Step2:
+
+
+In Parent Component  (AppComponent )   import Child Component
+
+
+App.ts :
+import { Hero } from './hero/hero';
+
+@Component({
+  selector: 'app-root',
+  imports: [Hero],
+  templateUrl: './app.html',
+  styleUrl: './app.css'
+})
+
+  export class App {
+  
+  Hero:string='Heman';
+}
+
+In App.html
+
+<app-hero [parentData]="Hero"></app-hero>
+
+In Hero.Html
+
+
+{{parentData}}
+
+
+
+---------------------------------------------------------
+
+
+ 
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

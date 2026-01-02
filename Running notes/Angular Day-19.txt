@@ -1,0 +1,129 @@
+CAnDeactivate Service 
+
+
+it is going to be called whe you are going to leave one route to another route so before opening another Route this Deactivate Route is going to be called
+
+
+
+
+Example
+
+
+you wrote something in textfield in account page
+when u clicked home page
+
+
+homepage become activated 
+account page deactivated
+
+
+deactivated is called when u leave  route  
+
+
+How To Implement CAnDeaActivate Service?
+
+Create one Service  AppDeactivateGuardService
+
+
+
+ng g s AppDeactivateGuardService
+
+
+
+step2 :
+
+
+create IDeactivate 
+
+export interface IDeactivate
+{
+  canExit:()=>boolean
+}
+
+
+
+only for canExit function Deactivate Service is called
+
+
+
+
+export class AppDeactivateGuardService implements CanDeactivate<IDeactivate> {
+
+  canDeactivate(component: IDeactivate, currentRoute: ActivatedRouteSnapshot, currentState: RouterStateSnapshot, nextState: RouterStateSnapshot): boolean {
+   return component.canExit?component.canExit():true;
+  }
+  
+
+
+
+In Your new Route 
+
+{path:'testDeactivate',component:TestDeactivate,canDeactivate:[AppDeactivateGuardService]},
+
+
+when user go to TestDeactivate and leave TestDeactivate component 
+
+at that time  canDeactivate method called of AppDeactivateGuardService 
+
+
+now CanDeactivate Method will check in TestDeactivate  wheather it has canExit() there  or not
+
+Our Case it is there
+
+
+
+example
+
+
+import { Component } from '@angular/core';
+import { IDeactivate } from '../app-deactivate-guard-service';
+
+@Component({
+  selector: 'app-test-deactivate',
+  imports: [],
+  templateUrl: './test-deactivate.html',
+  styleUrl: './test-deactivate.css',
+})
+export class TestDeactivate implements IDeactivate{
+ canExit():boolean {
+if(confirm("are you sure you want to exit"))
+{
+  return true;
+}
+else{
+  return false;
+}
+  };
+}
+
+
+above example CanExitMEthod is there  it will return true or false
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

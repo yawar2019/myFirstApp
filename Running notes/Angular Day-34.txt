@@ -1,0 +1,95 @@
+
+
+
+Eager Loading:
+
+In Angular,eager loading is a default strategy where your all application modules,component,directives and all resource
+
+are loaded upfront when the applcation first start. this means everything user might need available immediately
+
+this type of process is called as Early Loading
+
+key characterlistics of Eager Loading:
+
+Default Behaviour:by default any module imported to main application module is eagerly module
+
+initilization timing:all our Modules are loaded and initilized before Our Application begin.so no futher loading request required
+
+Bundle size:it will result to large initial Bundle size because code downloaded for once 
+
+
+
+
+What is LAzy Loading?
+
+
+Lazy Loading is also strategy used to optimize loading time of your application
+the modules ,component,directive are going to be loaded when they are required
+instead of loading all modules and there associated component at once during initial application load 
+we can allow our modules, application to load Asynchronoulsly as the user navigate to the application routes 
+this will result must faster initial load and improve the performance
+
+
+why use Lazy loading?
+
+it offer improved Initial loading time. by loading only require components it reduced the burden on application and increase the better experince
+
+Reduce Memory issues: since only required components loaded so there is no memry issue now
+
+better code orgaization easier way we are maintaing and scaling Our Application
+
+
+
+In App.route.ts
+
+    {path:"simpletemplateform" ,loadComponent:()=>import('./simpletemplateform/simpletemplateform').then(m=>m.Simpletemplateform)},
+
+
+use LoadComponent to Implement Lazy Loading
+
+
+
+
+
+Difference Between Observable and Subject?
+
+
+In Our rxjs we have Observable who can produce and store the result.we can access the result with the help of Subscribe
+untill we call subscribe we are not able to get the data
+
+
+var observable =of(1,2,3)
+
+observable.subscribe(observer=>console.log(observer))
+
+
+Subject is also one type of Observable
+
+it can act as producer and Consumer
+
+without subsribe method also it will produce and consume the data
+
+it is a multicast 
+
+next('hi')
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

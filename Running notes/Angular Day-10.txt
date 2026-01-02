@@ -1,0 +1,93 @@
+Day-10
+
+ts:
+
+carList=['BMW','TATA','Nano'];
+
+  sports=[
+    {id:1,name:'Football'}
+   ,{id:2,name:'Cricket'},
+     {id:3,name:'Kabadi'}]
+
+}
+
+
+.html
+
+
+@for (item of carList ; track item) {  
+  <ul>
+    <li>{{item}}</li>
+  </ul>
+}
+
+@for (item of sports; track item.id; let idx = $index, e = $even,o=$odd,first=$first,last=$last,count=$count) {
+Item #{{ idx }}: {{ item.name }} {{e}}-{{o}}-{{first}}--{{last}}--{{count}}<br>
+}
+
+ 
+for loop we used to repeat statements based on codition
+
+
+for loop we have some contextual variable 
+
+
+
+$count	Number of items in a collection iterated over
+$index	Index of the current row
+$first	Whether the current row is the first row
+$last	Whether the current row is the last row
+$even	Whether the current row index is even
+$odd	Whether the current row index is odd
+
+
+@for (item of items; track item.id; let idx = $index, e = $even) {
+Item #{{ idx }}: {{ item.name }}
+}
+
+
+These variables are always available with these names, but can be aliased via a let segment:
+
+
+
+
+
+@for (item of carList ; track item) {  
+  <ul>
+    <li>{{item}}</li>
+  </ul>
+}
+
+@for (item of sports; track item.id; let idx = $index, e = $even,o=$odd,first=$first,last=$last,count=$count) {
+Item #{{ idx }}: {{ item.name }} {{e}}-{{o}}-{{first}}--{{last}}--{{count}}<br>
+}
+
+@for (item of sports; track item.id; let idx = $index,f=$first ) {
+ <p [style.color]="f ? 'green' : 'red'">{{item.name}}</p><br>
+}
+
+<table>
+  <thead>
+    <tr>
+      <th>sno</th>
+    <th>id</th>
+    <th>name</th>
+    </tr>
+  </thead>
+  <tbody>
+@for (item of sports; track item.id; let idx = $index,e=$even ) {
+ <tr [style.color]="e ? 'green' : 'red'">
+  <td>{{idx+1}}</td>
+  <td>{{item.id}}</td>
+  <td>{{item.name}}</td>
+ </tr>
+}
+</tbody>
+</table>
+
+
+
+
+
+
+

@@ -1,0 +1,196 @@
+how to enable cors for WebApi
+
+Install-Package Microsoft.AspNet.WebApi.Cors
+
+Go to tools 
+nuget Package manager Console
+paste the install command make sure project selected on top
+and run the command
+
+say no when asked for VeiewStart html file Override
+
+then it get installed successgully
+
+where to add cors?
+
+Go to WebApiConfig add in Register method
+ config.EnableCors();
+
+Go To Controller add below to line above class
+
+   [EnableCors(origins: "*", headers: "*", methods: "*")]
+
+
+
+------------------------------------------------
+
+how to display records in UI?
+
+first Create a Service with the Name MyService
+
+ng g s MyService
+export class MyFirstService {
+}
+
+In that Service add Url
+
+ url="https://localhost:44371/";
+
+and add two more Variable one can hold all users and another can hold single user
+User:IUser | undefined;
+
+  AllUser:IUser[]=[];
+
+
+create a constructor to impot HttpClient Service
+
+constructor(private http:HttpClient)
+  {
+  }
+
+then call getUSers Method
+
+ getUsers():Observable<any>
+  {
+return this.http.get(this.url+'api/UseApi');
+  }
+
+here Observable will store Result and call using by Subscribe method
+
+
+
+Code:
+
+
+import { Injectable } from '@angular/core';
+import { IUser } from './model/User';
+import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs';
+
+@Injectable({
+  providedIn: 'root',
+})
+export class MyFirstService {
+  url="https://localhost:44371/";
+
+  User:IUser | undefined;
+
+  AllUser:IUser[]=[];
+
+  constructor(private http:HttpClient)
+  {
+  }
+
+  getUsers():Observable<any>
+  {
+return this.http.get(this.url+'api/UseApi');
+  }
+
+}
+
+
+OPen appConfig.ts
+
+import -------
+import { provideHttpClient } from '@angular/common/http';
+
+add to the provider
+provideHttpClient()
+
+export const appConfig: ApplicationConfig = {
+  providers: [
+    provideBrowserGlobalErrorListeners(),
+    provideZonelessChangeDetection(),
+    provideRouter(routes),
+    provideHttpClient()
+  ]
+}
+
+
+Go to UerApp.ts
+
+In UserApp.ts implements Oninit interface
+
+add to the constructor 
+constructor(public service:MyFirstService)
+  {
+
+  }
+
+ngOnInit(): void {
+    this.service.getUsers().subscribe(data=>{
+this.service.AllUser=data;
+
+    })
+  }
+
+Code:
+
+import { Component, OnInit } from '@angular/core';
+import { MyFirstService } from '../my-first-service';
+import { CommonModule } from '@angular/common';
+@Component({
+  selector: 'app-user-app',
+  imports: [CommonModule,],
+  providers:[MyFirstService],
+  templateUrl: './user-app.html',
+  styleUrl: './user-app.css',
+})
+export class UserApp implements OnInit {
+  
+  constructor(public service:MyFirstService)
+  {
+
+  }
+  
+  ngOnInit(): void {
+    this.service.getUsers().subscribe(data=>{
+this.service.AllUser=data;
+
+    })
+  }
+
+}
+
+
+
+In Html:
+
+<div class="container">
+<table class="table table-bordered">
+    <tr>
+        <th>UserId</th>
+        <th>UserName</th>
+        <th>Password</th>
+        <th>Role</th>
+    </tr>
+
+    <tr *ngFor="let user of service.AllUser">
+        <td>{{user.UserId}}</td>
+        <td>{{user.UserName}}</td>
+        <td>{{user.Password}}</td>
+        <td>{{user.Role}}</td>
+    </tr>
+</table>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
