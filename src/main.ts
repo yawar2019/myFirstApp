@@ -8,5 +8,5 @@ import { RxjxExample } from './app/rxjx-example/rxjx-example';
 import { ViewChildExample } from './app/view-child-example/view-child-example';
 import { Parent } from './app/parent/parent';
 
-bootstrapApplication(Parent, appConfig)
+bootstrapApplication(RxjxExample, appConfig)
   .catch((err) => console.error(err));

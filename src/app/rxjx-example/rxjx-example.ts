@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { catchError, concatMap, delay, filter, interval, map, mergeMap, Observable, of, take, throwError } from 'rxjs';
+import { catchError, concatMap, delay, filter, interval, map, mergeMap, Observable, of, take, throwError,Subject } from 'rxjs';
 
 @Component({
   selector: 'app-rxjx-example',
@@ -17,7 +17,8 @@ export class RxjxExample {
 //this.ObServableOperator1();
 //this.ObServableOperator2();
 //this.OperatorExampleConcatMap();
-this.OperatorExampleMergeMap();
+//this.OperatorExampleMergeMap();
+//this.SubscribeExample();
 }
 fetchData()
 {
@@ -116,6 +117,21 @@ result.subscribe(x=>console.log(x));
 }
 
 
+SubscribeExample()
+{
+  const subject = new Subject<number>();
+ 
+subject.subscribe({
+  next: (v) => console.log(`observerA: ${v}`),
+});
+subject.subscribe({
+  next: (v) => console.log(`observerB: ${v}`),
+});
+ 
+subject.next(1);
+subject.next(2);
+
+}
 }
 
 

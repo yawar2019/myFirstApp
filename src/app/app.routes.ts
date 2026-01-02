@@ -4,7 +4,6 @@ import { About } from './about/about';
 import { Contact } from './contact/contact';
 import { Appguard } from './appguard';
 import { AppDeactivateGuardService } from './app-deactivate-guard-service';
-import { Simpletemplateform } from './simpletemplateform/simpletemplateform';
 import { ReactiveFormEx } from './reactive-form-ex/reactive-form-ex';
 import { Dynamicform } from './dynamicform/dynamicform';
 import { Formbuilderexample } from './formbuilderexample/formbuilderexample';
@@ -25,7 +24,7 @@ export const routes: Routes = [
         //canActivate:[Appguard],
     children:[{path:':id/:name',component:About,canDeactivate:[AppDeactivateGuardService]}]
     },
-    {path:"simpletemplateform" ,component:Simpletemplateform},
+    {path:"simpletemplateform" ,loadComponent:()=>import('./simpletemplateform/simpletemplateform').then(m=>m.Simpletemplateform)},
     {path:"reactiveform" ,component:ReactiveFormEx},
      {path:"dynamicform" ,component:Dynamicform},//app-formbuilderexample
      {path:"formbuilder" ,component:Formbuilderexample},
