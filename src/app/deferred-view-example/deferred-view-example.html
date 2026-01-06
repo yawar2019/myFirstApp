@@ -1,0 +1,11 @@
+<p>deferred-view-example works!</p>
+
+<app-header-defferd></app-header-defferd>
+@defer(on idle) {
+ <app-body-defferd></app-body-defferd>
+}   
+@placeholder(minimum 500ms) {
+ <p>Loading body content, please wait...</p>
+}
+
+<app-footer-defferd></app-footer-defferd>

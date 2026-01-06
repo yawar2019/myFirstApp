@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { catchError, concatMap, delay, filter, interval, map, mergeMap, Observable, of, take, throwError,Subject, BehaviorSubject } from 'rxjs';
+import { catchError, concatMap, delay, filter, interval, map, mergeMap, Observable, of, take, throwError,Subject, BehaviorSubject, ReplaySubject, AsyncSubject } from 'rxjs';
 import { ajax } from 'rxjs/ajax';
 
 @Component({
@@ -21,7 +21,9 @@ export class RxjxExample {
 //this.OperatorExampleMergeMap();
 //this.SubscribeExample();
 //this.SubjectExampl1();
-this.BehaviouralSubjectExample();
+//this.SubjectExample3();
+//this.ReplaySubjectExample();
+this.AsyncSubjectExample();
 }
 fetchData()
 {
@@ -195,22 +197,54 @@ SubjectExample3()
 //   subject.next(300);
 // }
 
-SubscribeExample()
+// SubscribeExample()
+// {
+//   const subject = new Subject();
+ 
+// subject.subscribe({
+//   next: (v) => console.log(`observerA: ${v}`),
+// });
+// subject.subscribe({
+//   next: (v) => console.log(`observerB: ${v}`),
+// });
+ 
+// subject.next(1);
+// subject.next(2);
+
+// }
+// ReplaySubjectExample()
+// {
+//   const subject = new ReplaySubject(2);
+//   subject.next(100);
+//   subject.next(200);
+//   subject.next(300);
+//   //subscribe1
+//   subject.subscribe((data) => console.log('Subscriber 1:' + data));
+
+//   //subscribe2
+//   subject.subscribe((data) => console.log('Subscriber 2:' + data));
+//   subject.next(2020);
+//   //subscribe3
+//   subject.subscribe((data) => console.log('Subscriber 3:' + data));
+//   subject.next(2030);
+
+// } 
+AsyncSubjectExample()
 {
-  const subject = new Subject();
- 
-subject.subscribe({
-  next: (v) => console.log(`observerA: ${v}`),
-});
-subject.subscribe({
-  next: (v) => console.log(`observerB: ${v}`),
-});
- 
-subject.next(1);
-subject.next(2);
+  const subject = new AsyncSubject();
+  subject.next(100);
+  subject.next(200);
+  subject.next(300);
+  //subscribe1
+  subject.subscribe((data) => console.log('Subscriber 1:' + data));
+  //subject.complete();
+  subject.next(2020);
+  //subscribe2
+  subject.subscribe((data) => console.log('Subscriber 2:' + data));
+  subject.subscribe((data) => console.log('Subscriber 3:' + data));
+  subject.next(2030);
+  subject.complete();
+
 
 }
 }
-
-
-
