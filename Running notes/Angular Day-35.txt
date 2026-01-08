@@ -1,0 +1,83 @@
+  In Our Angular we have Both Observable and Subject are as part of Rxjs Library used to handle asynchronous data streams
+
+
+
+the difference between observable and Subject is 
+
+observable is a passive data producer (unicast)
+
+SubjectExampl1()
+{
+  //begining observable example
+  let obs=new Observable((obs)=>{obs.next(Math.random() )});
+
+  //subscribe1
+  obs.subscribe((data)=>console.log('Subscriber 1:'+data));
+
+  //subscribe2
+  obs.subscribe((data)=>console.log('Subscriber 2:'+data));
+  //Ending Of Observable Example
+ 
+}
+
+
+where as your Subject is an active Data Producer and Data Consumer(multicast)
+
+
+Begining of Subject Example Consumer
+
+  
+  // const data=ajax('https://jsonplaceholder.typicode.com/users');
+  // data.subscribe((res)=>console.log('Subject Subscriber 1:',res));
+  // data.subscribe((res)=>console.log('Subject Subscriber 2:',res));
+  // data.subscribe((res)=>console.log('Subject Subscriber 3:',res));
+ 
+
+
+
+//   const subject = new Subject();
+//   const data=ajax('https://jsonplaceholder.typicode.com/users');
+//   subject.subscribe((res)=>console.log('Subject Subscriber 1:',res));
+//   subject.subscribe((res)=>console.log('Subject Subscriber 2:',res));
+//   subject.subscribe((res)=>console.log('Subject Subscriber 3:',res));
+//   data.subscribe(subject);//data is producer and subject is consumer
+
+
+
+
+Difference between Observable and Subject
+
+
+observable                Subject
+
+unicast                     Multicast
+
+execution cold          execution hot(immediately effect)
+
+Only Producer              Producer and Consumer
+
+
+Each Subscriber         Each Subscriber will get Same Data
+get seprated data
+
+
+value you pushed            value pushed using next() from anywhere 
+using next method
+should be declared
+inside Declaration
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,67 @@
+Deferable Views also known as @defer Block
+Main is to Bring Template Level Lazy Loading for Components,Directives and pipes
+
+
+Deferrable views reduce initial Bundle size by loading content when needed instead during initial load itself
+
+Deferrable Views are portion of template wrapped under deferred block 
+
+example
+
+
+
+@defer(on trigger)
+{
+
+component 
+}
+
+Deferrable View = Lazy Loading of Any Component inside a Template
+
+
+@defer
+{
+<component>
+}
+
+
+
+Default trigger will be Idle 
+when browser is not doing anything
+
+
+if you want to display default html when component is not loading then use PlaceHolder
+
+@defer(on idle) {
+ <app-body-defferd></app-body-defferd>
+} 
+@placeholder(minimum 200ms) {
+ <p>Loading body content, please wait...</p>
+  }  
+
+another trigger we have that is  Immediate
+
+As soon as Initial Bundle downloaded it wil download component .it is not same as Idle
+
+
+ 
+Another Trigger is ViewPort:
+
+@defer(on viewport) {
+ <app-body-defferd></app-body-defferd>
+} 
+@placeholder(minimum 200ms) {
+ <p>Loading body content, please wait...</p>
+  }
+
+
+
+
+
+
+
+
+
+
+
+
