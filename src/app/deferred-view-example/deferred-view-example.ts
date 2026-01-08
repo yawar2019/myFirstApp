@@ -10,5 +10,5 @@ import { FooterDefferd } from '../footer-defferd/footer-defferd';
   styleUrl: './deferred-view-example.css'
 })
 export class DeferredViewExample {
-
+isAvailable: boolean = false;
 }

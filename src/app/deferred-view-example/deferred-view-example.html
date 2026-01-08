@@ -1,11 +1,119 @@
 <p>deferred-view-example works!</p>
 
+<!-- 
+//Example of using Angular's deferred loading feature idle
 <app-header-defferd></app-header-defferd>
 @defer(on idle) {
  <app-body-defferd></app-body-defferd>
-}   
-@placeholder(minimum 500ms) {
+} 
+@placeholder(minimum 200ms) {
  <p>Loading body content, please wait...</p>
+  }  
+
+<app-footer-defferd></app-footer-defferd> -->
+
+
+
+
+
+
+
+
+<!-- //Example of using Angular's deferred loading feature immdiate -->
+<!-- <app-header-defferd></app-header-defferd>
+@defer(on immediate) {
+ <app-body-defferd></app-body-defferd>
+} 
+@placeholder(minimum 200ms) {
+ <p>Loading body content, please wait...</p>
+  }  
+
+<app-footer-defferd></app-footer-defferd> -->
+
+
+ <!-- //Example of using Angular's deferred loading feature viewport   -->
+<!-- <app-header-defferd></app-header-defferd>
+@defer(on viewport) {
+ <app-body-defferd></app-body-defferd>
+} 
+@placeholder  {
+ <p>Loading body content, please wait...</p>
+  }  
+
+<app-footer-defferd></app-footer-defferd> -->
+
+
+
+
+
+ <!-- //Example of using Angular's deferred loading feature basedon button clicked   -->
+ <!-- <button #ClickButton>click button</button> 
+ <app-header-defferd></app-header-defferd>
+
+@defer(on interaction(ClickButton)) {
+ <app-body-defferd></app-body-defferd>
+} 
+@placeholder  {
+ <p>Loading body content, please wait...</p>
+  }  
+
+  @defer(on timer(5000)) {
+  <app-footer-defferd></app-footer-defferd> 
+  } -->
+  
+<!-- //based on condition  -->
+<!-- 
+<button (click)="isAvailable = true">Load Body Content</button> 
+ <app-header-defferd></app-header-defferd>
+
+@defer(when isAvailable) {
+ <app-body-defferd></app-body-defferd>
+} 
+@placeholder  {
+ <p>Loading body content, please wait...</p>
+  }  
+
+  <app-footer-defferd></app-footer-defferd>  -->
+
+
+  <!-- //based on condition with  prefetch
+  on idle it will load component  not render it
+  its called as prefetching
+  
+  on interaction it will render the component
+  -->
+<!-- <button #LoadBodyContent>Load Body Content</button>
+
+
+<app-header-defferd></app-header-defferd>
+
+@defer(prefetch on idle; on interaction(LoadBodyContent)) {
+ <app-body-defferd></app-body-defferd>
+} 
+@placeholder  {
+ <p>Loading body content, please wait...</p>
+  }  
+ 
+
+  <app-footer-defferd></app-footer-defferd> -->
+
+
+
+
+
+<app-header-defferd></app-header-defferd>
+
+@defer(on idle) {
+ <app-body-defferd></app-body-defferd>
+} 
+@placeholder(minimum 600ms) {
+ <p>Loading body content, please wait...</p>
+  }  
+ @loading(minimum 600ms; after 1500ms) {
+ <p>Still loading body content, please wait...</p>
+ }
+@error {
+ <p>Error loading body content. Please try again later.</p>
 }
 
-<app-footer-defferd></app-footer-defferd>
+  <app-footer-defferd></app-footer-defferd>
