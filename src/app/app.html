@@ -160,4 +160,7 @@
 <button (click)="login()">Login</button>
 <button (click)="logout()">LogOut</button>
 
-
+<div #greeting>Hello!</div>
+@defer (on viewport(greeting)) {
+  <app-about />
+}

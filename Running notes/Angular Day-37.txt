@@ -57,6 +57,103 @@ Another Trigger is ViewPort:
 
 
 
+<div #greeting>Hello!</div>
+@defer (on viewport(greeting)) {
+  <greetings-cmp />
+}
+
+
+Based on event Interaction
+
+
+on Interaction(referenceBlock)
+talking event action
+
+<!-- //Example of using Angular's deferred loading feature basedon button clicked   -->
+ <!-- <button #ClickButton>click button</button> 
+ <app-header-defferd></app-header-defferd>
+
+@defer(on interaction(ClickButton)) {
+ <app-body-defferd></app-body-defferd>
+} 
+@placeholder  {
+ <p>Loading body content, please wait...</p>
+  }  
+
+after 5 sec you want to load component go for timer
+
+  @defer(on timer(5000)) {
+  <app-footer-defferd></app-footer-defferd> 
+  } -->
+  
+<!-- //based on condition  -->
+
+
+Based on condition you are going to execute code
+<!-- 
+<button (click)="isAvailable = true">Load Body Content</button> 
+ <app-header-defferd></app-header-defferd>
+
+@defer(when isAvailable) {
+ <app-body-defferd></app-body-defferd>
+} 
+@placeholder  {
+ <p>Loading body content, please wait...</p>
+  }  
+
+  <app-footer-defferd></app-footer-defferd>  -->
+
+
+class App
+{
+isAvailable = false;
+
+}
+
+when for condition (true load component else not load component)
+
+
+prefetch means download component but dont render it
+
+
+on interaction it will render the component
+  -->
+<!-- <button #LoadBodyContent>Load Body Content</button>
+
+
+<app-header-defferd></app-header-defferd>
+
+@defer(prefetch on idle; on interaction(LoadBodyContent)) {
+ <app-body-defferd></app-body-defferd>
+} 
+@placeholder  {
+ <p>Loading body content, please wait...</p>
+  }  
+ 
+
+  <app-footer-defferd></app-footer-defferd> -->
+
+
+
+placeholder will display block code untill your component not loaded
+
+loading block will call when your component start loading for us
+
+
+@defer(on idle) {
+ <app-body-defferd></app-body-defferd>
+} 
+@placeholder(minimum 600ms) {
+ <p>Loading body content, please wait...</p>
+  }  
+ @loading(minimum 600ms; after 1500ms) {
+ <p>Still loading body content, please wait...</p>
+ }
+@error {
+ <p>Error loading body content. Please try again later.</p>
+}
+
+
 
 
 

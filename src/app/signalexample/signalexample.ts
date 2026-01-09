@@ -44,7 +44,7 @@ Increment()
 {
   //this.count=this.count+1 //wrong
 this.count.update(c=>c+1);//right  based on current value you want to update count
-                            //go for update method
+     this.a.set(this.a() + 1);                       //go for update method
 }
 
 Decrement()

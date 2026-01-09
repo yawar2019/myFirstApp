@@ -8,6 +8,7 @@ import { RxjxExample } from './app/rxjx-example/rxjx-example';
 import { ViewChildExample } from './app/view-child-example/view-child-example';
 import { Parent } from './app/parent/parent';
 import { DeferredViewExample } from './app/deferred-view-example/deferred-view-example';
+import { Signalexample } from './app/signalexample/signalexample';
 
-bootstrapApplication(DeferredViewExample, appConfig)
+bootstrapApplication(Signalexample, appConfig)
   .catch((err) => console.error(err));

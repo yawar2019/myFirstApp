@@ -15,7 +15,7 @@ interface IContact
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet,Contact,FormsModule,CommonModule],
+  imports: [RouterOutlet,Contact,FormsModule,CommonModule,About],
   templateUrl:'./app.html',
   styleUrl: './app.css'
 })

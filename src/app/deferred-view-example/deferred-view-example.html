@@ -43,7 +43,10 @@
 <app-footer-defferd></app-footer-defferd> -->
 
 
-
+<div #greeting>Hello!</div>
+@defer (on viewport(greeting)) {
+  <app-about />
+}
 
 
  <!-- //Example of using Angular's deferred loading feature basedon button clicked   -->
